@@ -1,7 +1,7 @@
 # bAmazon
 
 
-#bamazonCustomer.js
+# bamazonCustomer.js
 Prints the products in the store.
 
 Prompts customer which product they would like to purchase by ID number.
@@ -13,7 +13,7 @@ However, if there is not enough of the product in stock, it will tell the user t
 If the purchase goes through, it updates the stock quantity to reflect the purchase.
 It will also update the product sales in the department table.
 
-#bamazonManager.js
+# bamazonManager.js
 Starts with a menu:
 
 View Products for Sale
@@ -31,7 +31,7 @@ If the manager selects Add New Product, it allows the manager to add a new produ
 
 If the manager selects End Session, it ends the session and doesn't go back to the menu.
 
-#Technology used
+# Technology used
 npm inquirer
 npm mysql
 node.js
@@ -45,5 +45,5 @@ mysql workbench
 ![Comand line](/images/managerAddinvenotry.PNG)
 
 
-##Author 
+## Author 
 Amanuel demissiew
