@@ -32,8 +32,8 @@ var connection = mysql.createConnection({
     //   console.log(res);
       
       var table = new Table({
-        head: ['item_id', 'product_name',"price"],
-        colWidths: [10,40, 20],
+        head: ['item_id', 'product_name',"price","stock_quantity"],
+        colWidths: [10,40, 20,20],
         style:{
           head:["yellow"],
           compact:true
@@ -43,7 +43,7 @@ var connection = mysql.createConnection({
 
     });
     for(var i=0; i<res.length;i++){
-        table.push([res[i].item_id,res[i].product_name,res[i].price])
+        table.push([res[i].item_id,res[i].product_name,res[i].price,res[i].stock_quantity])
     }
      console.log(table.toString());
      purchase();
@@ -61,12 +61,38 @@ function purchase(){
             if (err) throw err;
             if (res.length === 0) {
                 console.log('no product in store');
+                purchase();
             }
-            else{
-                console.log(' all is ok')
-            }
-        });
-
-    })
-
+            else{ 
+              inquirer.prompt({
+                name: "quantity",
+                type: "input",
+                message: "How many would you like to buy?"
+            }).then(function(result){
+                var quantity = result.quantity;
+                if(quantity > res[0].stock_quantity){
+                    console.log("sorry we only have " + res[0].stock_quantity + " number of " + res[0].product_name + "!!")
+                }else{
+                    var newStock = res[0].stock_quantity - quantity;
+                    connection.query("UPDATE products SET ? WHERE ?",[
+                        {
+                            stock_quantity: newStock
+                        },
+                        {
+                            item_id: res[0].item_id
+                        }
+                    ],function(err, update){
+                        if(err) throw err;
+                        var totalPrice = res[0].price * quantity;
+                        console.log("=====================================");
+                        console.log("Order been successfully processed!!!");
+                        console.log("you have been charged " + totalPrice + "$ .");
+                    })
+                }
+            })
+        }
+    });
+});
 }
+
+
