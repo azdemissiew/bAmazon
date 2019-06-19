@@ -39,10 +39,10 @@ mysql workbench
 
 # snippit
 ![Comand line](/images/capture.PNG)
-![Comand line](/images/snippet3.customerpicture.PNG)
+![Comand line](/images/customerpicture2.PNG)
 ![Comand line](/images/managerList.PNG)
 ![Comand line](/images/managerlowinventery.PNG)
-![Comand line](/images/managerAddinvenotry.PNG)
+![Comand line](/images/mangerAddinvenotry.PNG)
 
 
 ## Author 
