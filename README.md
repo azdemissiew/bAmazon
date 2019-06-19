@@ -38,8 +38,8 @@ node.js
 mysql workbench
 
 # snippit
-![Comand line](/images/capture.PNG)
-![Comand line](/images/customerpicture2.PNG)
+![Comand line](/images/Capture.PNG)
+![Comand line](/images/customerpicture2.png)
 ![Comand line](/images/managerList.PNG)
 ![Comand line](/images/managerlowinventery.PNG)
 ![Comand line](/images/mangerAddinvenotry.PNG)
